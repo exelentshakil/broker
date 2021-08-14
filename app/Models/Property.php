@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Broker extends Model
+class Property extends Model
 {
     use HasFactory;
 
-    public function properties() {
-        return $this->hasMany(Property::class);
+    public function broker() {
+        return $this->belongsTo(Broker::class);
     }
 }

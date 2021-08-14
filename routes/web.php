@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\BrokerController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\PropertyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,8 +22,13 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
+
 })->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+Route::name('admin.')->group(function() {
+    Route::resource('properties', PropertyController::class)->middleware(['auth']);
+    Route::resource('brokers', BrokerController::class)->middleware(['auth']);
+});
 
-Route::get('/pay', [PaymentController::class, 'pay']);
+
+require __DIR__.'/auth.php';

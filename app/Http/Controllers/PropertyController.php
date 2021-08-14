@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\BrokerCollection;
-use App\Models\Broker;
+use App\Models\Property;
 use Illuminate\Http\Request;
 
-class BrokerController extends Controller
+class PropertyController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,8 @@ class BrokerController extends Controller
      */
     public function index()
     {
-        $brokers = Broker::paginate(20);
-        return view('admin.brokers.index', compact('brokers'));
+        $properties = Property::paginate(50);
+        return view('admin.properties.index', compact('properties'));
     }
 
     /**
@@ -43,21 +42,21 @@ class BrokerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Broker  $broker
+     * @param  \App\Models\Property  $property
      * @return \Illuminate\Http\Response
      */
-    public function show(Broker $broker)
+    public function show(Property $property)
     {
-        return view('admin.brokers.show', compact('broker'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Broker  $broker
+     * @param  \App\Models\Property  $property
      * @return \Illuminate\Http\Response
      */
-    public function edit(Broker $broker)
+    public function edit(Property $property)
     {
         //
     }
@@ -66,10 +65,10 @@ class BrokerController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Broker  $broker
+     * @param  \App\Models\Property  $property
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Broker $broker)
+    public function update(Request $request, Property $property)
     {
         //
     }
@@ -77,10 +76,10 @@ class BrokerController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Broker  $broker
+     * @param  \App\Models\Property  $property
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Broker $broker)
+    public function destroy(Property $property)
     {
         //
     }

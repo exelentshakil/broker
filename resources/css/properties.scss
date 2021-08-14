@@ -1,0 +1,32 @@
+/** Properties nav */
+ul.app_menu li {
+    display: inline-block;
+    background: black;
+    padding: 10px 30px;
+    color: #fff;
+}
+
+a.btn.btn-primary {
+    background: blue;
+    color: #fff;
+    padding: 1px 20px;
+    margin-bottom: 5px;
+}
+
+a.btn {
+    font-size: 14px;
+}
+
+a.btn.btn-danger {
+    background: red;
+    color: #fff;
+    padding: 1px 20px;
+}
+
+table{
+    width:100%;
+}
+table.table-fixed tr {
+    border: 1px solid;
+}
+

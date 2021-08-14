@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\Broker;
+use App\Models\Property;
 use Illuminate\Database\Seeder;
 
-class BrokerSeeder extends Seeder
+class PropertySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +14,6 @@ class BrokerSeeder extends Seeder
      */
     public function run()
     {
-        Broker::factory(100)->hasProperties(10)->create();
+        Property::factory(500)->create();
     }
 }
